@@ -71,11 +71,22 @@
 
         .profile-img {
             width: 200px;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: 50%;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            border: 4px solid rgba(255,255,255,0.1);
+            border: 4px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
         }
 
         .hero-title {
@@ -262,6 +273,15 @@
             margin-top: 5rem;
         }
 
+        .visitor-stats {
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .visitor-stats small {
+            font-size: 0.8rem;
+        }
+
         .timeline-item {
             border-left: 3px solid var(--secondary-color);
             padding-left: 2rem;
@@ -370,9 +390,9 @@
                     </a>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <div class="profile-placeholder bg-light rounded-circle mx-auto" style="width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255,255,255,0.3);">
-                        <i class="fas fa-user text-white" style="font-size: 4rem; opacity: 0.7;"></i>
-            </div>
+                    <div class="profile-img-container">
+                        <img src="assets/images/profile.jpg" alt="Nguyen Xuan Tinh" class="profile-img">
+                    </div>
                 </div>
             </div>
         </div>
@@ -748,9 +768,15 @@
             </div>
             <hr class="my-4">
             <div class="row">
-                <div class="col-12 text-center">
-                    <p>&copy; 2025 Nguyen Xuan Tinh. All rights reserved. | 
-                    <small>15+ Years Experience | 50+ Projects | 25+ Clients | 12 Countries</small></p>
+                <div class="col-md-6 text-center">
+                    <p>&copy; 2025 Nguyen Xuan Tinh. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <p><small>15+ Years Experience | 50+ Projects | 25+ Clients | 12 Countries</small></p>
+                    <div id="visitor-stats" class="visitor-stats">
+                        <small><i class="fas fa-users me-1"></i>Visitors: <span id="visitor-count">Loading...</span></small>
+                        <small class="ms-3"><i class="fas fa-globe me-1"></i>Countries: <span id="country-count">Loading...</span></small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -863,6 +889,41 @@
 
         document.querySelectorAll('.card').forEach(card => {
             counterObserver.observe(card);
+        });
+
+        // Visitor tracking functionality
+        function updateVisitorStats() {
+            // Get existing visitor data from localStorage
+            let visitorData = JSON.parse(localStorage.getItem('visitorData') || '{"count": 0, "countries": new Set()}');
+            
+            // Increment visitor count
+            visitorData.count += 1;
+            
+            // Get country from timezone (simplified approach)
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const country = timezone.split('/')[0] || 'Unknown';
+            
+            // Convert Set to Array for localStorage
+            if (!Array.isArray(visitorData.countries)) {
+                visitorData.countries = Array.from(visitorData.countries || []);
+            }
+            
+            // Add country if not already present
+            if (!visitorData.countries.includes(country)) {
+                visitorData.countries.push(country);
+            }
+            
+            // Save back to localStorage
+            localStorage.setItem('visitorData', JSON.stringify(visitorData));
+            
+            // Update display
+            document.getElementById('visitor-count').textContent = visitorData.count.toLocaleString();
+            document.getElementById('country-count').textContent = visitorData.countries.length;
+        }
+
+        // Initialize visitor stats when page loads
+        window.addEventListener('load', function() {
+            updateVisitorStats();
         });
     </script>
 </body>
