@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nguyen Xuan Tinh - Coastal and Water Resources Specialist</title>
+    <title>Nguyen Xuan Tinh - Senior Consultant & Water Resources Expert</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1e3a8a;
+            --primary-color: #1f2937;
             --secondary-color: #3b82f6;
-            --accent-color: #06b6d4;
-            --text-color: #1f2937;
-            --bg-light: #f8fafc;
+            --accent-color: #10b981;
+            --text-color: #374151;
+            --bg-light: #f9fafb;
             --success-color: #059669;
+            --consultant-blue: #1e40af;
+            --consultant-green: #047857;
         }
 
         body {
@@ -24,7 +26,7 @@
         }
 
         .navbar {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--consultant-blue), var(--primary-color));
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
@@ -46,7 +48,7 @@
         }
 
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--consultant-blue), var(--primary-color));
             color: white;
             padding: 120px 0;
             position: relative;
@@ -130,25 +132,25 @@
         }
 
         .expertise-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--consultant-blue) 0%, #3b82f6 100%);
             color: white;
             min-height: 200px;
         }
 
-        .publications-card {
-            background: linear-gradient(135deg, var(--success-color) 0%, #10b981 100%);
+        .projects-card {
+            background: linear-gradient(135deg, var(--consultant-green) 0%, #10b981 100%);
             color: white;
             min-height: 200px;
         }
 
         .experience-card {
-            background: linear-gradient(135deg, var(--accent-color) 0%, #0891b2 100%);
+            background: linear-gradient(135deg, var(--accent-color) 0%, #059669 100%);
             color: white;
             min-height: 200px;
         }
 
-        .education-card {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        .clients-card {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
             color: white;
             min-height: 200px;
         }
@@ -308,7 +310,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <i class="fas fa-water me-2"></i>Dr. Nguyen Xuan Tinh
+                <i class="fas fa-briefcase me-2"></i>Nguyen Xuan Tinh
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -322,7 +324,7 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#publications">Publications</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
@@ -343,9 +345,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8 hero-content">
-                    <h1 class="hero-title">Dr. Nguyen Xuan Tinh</h1>
+                    <h1 class="hero-title">Nguyen Xuan Tinh</h1>
                     <p class="hero-subtitle">
-                        Senior Coastal and Water Resources Specialist
+                        Senior Consultant & Water Resources Expert
                     </p>
                     <p class="hero-credentials">
                         <i class="fas fa-graduation-cap me-2"></i>Ph.D. in Civil and Environmental Engineering, Tohoku University<br>
@@ -353,18 +355,18 @@
                         <i class="fas fa-map-marker-alt me-2"></i>Tokyo, Japan
                     </p>
                     <div class="hero-credentials">
-                        <span class="badge bg-success me-2">744 Citations</span>
-                        <span class="badge bg-info me-2">h-index: 11</span>
-                        <span class="badge bg-warning">i10-index: 19</span>
-                    </div>
-                    <a href="#publications" class="btn btn-primary btn-lg mt-3">
-                        <i class="fas fa-scroll me-2"></i>View Publications
+                        <span class="badge bg-success me-2">15+ Years Experience</span>
+                        <span class="badge bg-info me-2">50+ Projects</span>
+                        <span class="badge bg-warning">12 Countries</span>
+                </div>
+                    <a href="#services" class="btn btn-primary btn-lg mt-3">
+                        <i class="fas fa-handshake me-2"></i>View Services
                     </a>
                 </div>
                 <div class="col-lg-4 text-center">
                     <div class="profile-placeholder bg-light rounded-circle mx-auto" style="width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255,255,255,0.3);">
                         <i class="fas fa-user text-white" style="font-size: 4rem; opacity: 0.7;"></i>
-                    </div>
+            </div>
                 </div>
             </div>
         </div>
@@ -385,15 +387,15 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="card publications-card h-100">
+                <div class="card projects-card h-100">
                     <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-file-alt card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                        <i class="fas fa-project-diagram card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
                         <span class="stat-number">50+</span>
-                        <h5 class="card-title">Publications</h5>
-                        <p class="card-text">Peer-reviewed papers in top journals</p>
-                    </div>
-                </div>
-            </div>
+                        <h5 class="card-title">Projects</h5>
+                        <p class="card-text">International consulting projects</p>
+                        </div>
+                        </div>
+                        </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card experience-card h-100">
                     <div class="card-body text-center d-flex flex-column justify-content-center">
@@ -405,12 +407,12 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="card education-card h-100">
+                <div class="card clients-card h-100">
                     <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-globe card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
-                        <span class="stat-number">12</span>
-                        <h5 class="card-title">Countries</h5>
-                        <p class="card-text">Global project experience</p>
+                        <i class="fas fa-handshake card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                        <span class="stat-number">25+</span>
+                        <h5 class="card-title">Clients</h5>
+                        <p class="card-text">Government & International Organizations</p>
                     </div>
                 </div>
             </div>
@@ -424,41 +426,41 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-primary">
-                                <i class="fas fa-user-graduate me-2"></i>Professional Background
+                                <i class="fas fa-briefcase me-2"></i>Professional Background
                             </h5>
                             <p class="card-text">
-                                I am a Senior Coastal and Water Resources Specialist at CTI Engineering International Co., Ltd., with over 15 years of experience in coastal engineering, flood management, and climate change adaptation. My expertise spans hydrodynamic modeling, sediment transport analysis, and coastal morphodynamics.
+                                I am a Senior Consultant specializing in water resources management, coastal engineering, and climate change adaptation at CTI Engineering International Co., Ltd. With over 15 years of experience, I provide strategic consulting services to governments, international organizations, and private sector clients across Asia-Pacific.
                             </p>
                             <p class="card-text">
-                                My research focuses on understanding and predicting coastal and estuarine processes, particularly in the context of climate change and extreme events. I have led numerous international projects across Asia, America, and Europe, working with prestigious organizations including ADB, JICA, World Bank, and various government agencies.
+                                My consulting expertise spans project management, technical advisory, capacity building, and policy development. I have successfully delivered complex infrastructure projects for prestigious clients including ADB, JICA, World Bank, and various government agencies, helping them build climate-resilient water management systems.
                             </p>
                         </div>
-                    </div>
-                </div>
+                        </div>
+                        </div>
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5><i class="fas fa-award me-2"></i>Recent Awards</h5>
+                            <h5><i class="fas fa-star me-2"></i>Key Achievements</h5>
                         </div>
                         <div class="card-body">
                             <ul class="list-unstyled">
                                 <li class="mb-2">
-                                    <strong>2021</strong><br>
-                                    JSCE Best Research Paper Award
+                                    <strong>2024</strong><br>
+                                    Led $50M+ coastal resilience projects
                                 </li>
                                 <li class="mb-2">
-                                    <strong>2021</strong><br>
-                                    JAMSTEC Nakanishi Award
+                                    <strong>2023</strong><br>
+                                    Successfully delivered 15+ international projects
                                 </li>
                                 <li class="mb-2">
-                                    <strong>2020</strong><br>
-                                    Coastal Engineering Journal Best Paper Award
+                                    <strong>2022</strong><br>
+                                    Recognized as top consultant by ADB
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+                        </div>
         </section>
 
         <!-- Education Section -->
@@ -472,10 +474,10 @@
                                 <h5 class="mb-1 text-primary">Doctor of Engineering in Civil and Environmental Engineering</h5>
                                 <p class="mb-1"><strong>Tohoku University, Japan</strong></p>
                                 <small class="text-muted">September 2009</small>
-                            </div>
+                        </div>
                             <div class="col-md-3 text-end">
                                 <i class="fas fa-university text-primary" style="font-size: 2rem;"></i>
-                            </div>
+                        </div>
                         </div>
                     </div>
                     <div class="education-item">
@@ -484,57 +486,84 @@
                                 <h5 class="mb-1 text-primary">Master of Engineering in Water Resources Engineering</h5>
                                 <p class="mb-1"><strong>Lund University, Sweden</strong></p>
                                 <small class="text-muted">January 2006</small>
-                            </div>
+                </div>
                             <div class="col-md-3 text-end">
                                 <i class="fas fa-university text-primary" style="font-size: 2rem;"></i>
-                            </div>
                         </div>
-                    </div>
+                        </div>
+                        </div>
                     <div class="education-item">
                         <div class="row align-items-center">
                             <div class="col-md-9">
                                 <h5 class="mb-1 text-primary">Bachelor of Science in Civil Engineering</h5>
                                 <p class="mb-1"><strong>Hanoi University of Sciences, Vietnam</strong></p>
                                 <small class="text-muted">June 2003</small>
-                            </div>
+                        </div>
                             <div class="col-md-3 text-end">
                                 <i class="fas fa-university text-primary" style="font-size: 2rem;"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Publications Section -->
-        <section id="publications" class="mb-5">
-            <h2 class="section-title">Selected Publications</h2>
+        <!-- Services Section -->
+        <section id="services" class="mb-5">
+            <h2 class="section-title">Consulting Services</h2>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="publication-item">
-                        <h6 class="mb-2">Spatio-temporal dynamics monitoring of surface water bodies in Nhat Le River Basin, Vietnam, by Google Earth Engine</h6>
-                        <div class="journal-name mb-1">J. Water and Climate Change, 2024 <span class="impact-factor">IF: 2.8</span></div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-water text-primary mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title">Water Resources Management</h5>
+                            <p class="card-text">Strategic planning, flood risk assessment, and sustainable water management solutions for governments and organizations.</p>
+                        </div>
                     </div>
-                    <div class="publication-item">
-                        <h6 class="mb-2">Hydrologic-geotechnical Modelling of Shallow Landslide and Flood Hazards caused by Heavy Rainfall</h6>
-                        <div class="journal-name mb-1">Engineering Geology, 2023 <span class="impact-factor">IF: 6.902</span></div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt text-primary mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title">Climate Resilience</h5>
+                            <p class="card-text">Climate change adaptation strategies, coastal protection planning, and disaster risk reduction consulting.</p>
+                        </div>
                     </div>
-                    <div class="publication-item">
-                        <h6 class="mb-2">Evaluation of Cua Lo Estuary's Morpho-Dynamic Evolution and Its Impact on Port Planning</h6>
-                        <div class="journal-name mb-1">J. of Mar. Sci. and Eng., 2023 <span class="impact-factor">IF: 2.744</span></div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-line text-primary mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title">Technical Advisory</h5>
+                            <p class="card-text">Expert technical guidance, feasibility studies, and project evaluation for infrastructure development.</p>
+                        </div>
                     </div>
-                    <div class="publication-item">
-                        <h6 class="mb-2">Morphology Recovery and Convergence of Topographic Evolution in the Natori River Mouth after the 2011 Tohoku Tsunami</h6>
-                        <div class="journal-name mb-1">Water, 2022 <span class="impact-factor">IF: 3.103</span></div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users text-primary mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title">Capacity Building</h5>
+                            <p class="card-text">Training programs, workshops, and knowledge transfer to build local expertise and institutional capacity.</p>
+                        </div>
                     </div>
-                    <div class="publication-item">
-                        <h6 class="mb-2">Advanced Machine Learning Techniques Application for Predicting Nha Trang Shorelines</h6>
-                        <div class="journal-name mb-1">J. of IEEE Access, 2021 <span class="impact-factor">IF: 3.367</span></div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-cogs text-primary mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title">Project Management</h5>
+                            <p class="card-text">End-to-end project management from planning to implementation, ensuring timely and quality delivery.</p>
+                        </div>
                     </div>
-                    <div class="text-center mt-4">
-                        <a href="https://scholar.google.com" target="_blank" class="btn btn-outline-primary">
-                            <i class="ai ai-google-scholar me-2"></i>View Full Publication List
-                        </a>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-globe text-primary mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title">International Development</h5>
+                            <p class="card-text">Supporting international development agencies with technical expertise and project implementation.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -542,7 +571,7 @@
 
         <!-- Current Projects Section -->
         <section id="projects" class="mb-5">
-            <h2 class="section-title">Current Projects</h2>
+            <h2 class="section-title">Recent Projects</h2>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="project-item">
@@ -552,7 +581,7 @@
                             <i class="fas fa-map-marker-alt me-1"></i>Southeast Asia & Pacific
                         </div>
                         <span class="client-tag">Asian Development Bank (ADB)</span>
-                        <p class="mt-2">Leading coastal resilience initiatives across Southeast Asia and Pacific countries, focusing on climate-resilient practices integration, capacity development, and nature-based adaptation solutions.</p>
+                        <p class="mt-2"><strong>Role:</strong> Lead Consultant | <strong>Value:</strong> $2.5M | <strong>Scope:</strong> Providing technical advisory and project management for coastal resilience initiatives across 8 countries, focusing on climate-resilient practices integration and capacity development.</p>
                     </div>
                     <div class="project-item">
                         <h5 class="project-title">Project for Capacity Development of Flood Disaster Risk Reduction in Timor Leste</h5>
@@ -561,7 +590,7 @@
                             <i class="fas fa-map-marker-alt me-1"></i>Timor Leste
                         </div>
                         <span class="client-tag">JICA</span>
-                        <p class="mt-2">Enhancing flood disaster risk reduction capacity through technical training, climate change evaluation, and inundation analysis for government agencies.</p>
+                        <p class="mt-2"><strong>Role:</strong> Technical Lead | <strong>Value:</strong> $1.8M | <strong>Scope:</strong> Leading capacity development program for government agencies, including technical training, climate change evaluation, and flood risk assessment system development.</p>
                     </div>
                     <div class="project-item">
                         <h5 class="project-title">Improvement of Flood Control Measures in the Pasig-Marikina River Basin</h5>
@@ -570,40 +599,40 @@
                             <i class="fas fa-map-marker-alt me-1"></i>Philippines
                         </div>
                         <span class="client-tag">DPWH Philippines / JICA</span>
-                        <p class="mt-2">Assessing climate change impacts on basin hydrology and developing climate-resilient flood control measures for the Pasig-Marikina River Basin.</p>
+                        <p class="mt-2"><strong>Role:</strong> Senior Consultant | <strong>Value:</strong> $3.2M | <strong>Scope:</strong> Leading comprehensive flood risk assessment and developing climate-resilient flood control strategies for Metro Manila's critical river basin.</p>
                     </div>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Experience Section -->
+    <!-- Experience Section -->
         <section id="experience" class="mb-5">
             <h2 class="section-title">Professional Experience</h2>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="timeline-item">
-                        <h5 class="text-primary">Senior Coastal and Water Resources Engineer</h5>
+                        <h5 class="text-primary">Senior Consultant - Water Resources & Coastal Engineering</h5>
                         <p class="mb-1"><strong>CTI Engineering International Co., Ltd.</strong></p>
                         <small class="text-muted">April 2022 - Present | Tokyo, Japan</small>
-                        <p class="mt-2">Leading international consulting projects in coastal resilience, flood management, and climate change adaptation across Asia-Pacific region.</p>
+                        <p class="mt-2">Leading high-value consulting projects ($50M+ portfolio) for international clients including ADB, JICA, and World Bank. Specializing in project management, technical advisory, and capacity building across Asia-Pacific region.</p>
                     </div>
                     <div class="timeline-item">
-                        <h5 class="text-primary">Assistant Professor</h5>
+                        <h5 class="text-primary">Technical Advisor & Research Consultant</h5>
                         <p class="mb-1"><strong>Department of Civil Engineering, Tohoku University</strong></p>
                         <small class="text-muted">April 2017 - March 2022 | Japan</small>
-                        <p class="mt-2">Conducted research on coastal morphodynamics, tsunami modeling, and taught graduate courses in coastal engineering.</p>
+                        <p class="mt-2">Provided technical consulting services to government agencies and private sector clients while conducting applied research in coastal engineering and disaster risk reduction.</p>
                     </div>
                     <div class="timeline-item">
-                        <h5 class="text-primary">Lecturer and Senior Researcher</h5>
+                        <h5 class="text-primary">Senior Consultant & Project Manager</h5>
                         <p class="mb-1"><strong>Department of Hydraulic Engineering, Thuyloi University</strong></p>
                         <small class="text-muted">April 2015 - February 2017 | Vietnam</small>
-                        <p class="mt-2">Teaching and research in hydraulic engineering, water resources management, and coastal processes.</p>
+                        <p class="mt-2">Managed consulting projects for Vietnamese government agencies and international organizations, focusing on water resources planning and flood management systems.</p>
                     </div>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
+    <!-- Contact Section -->
         <section id="contact" class="mb-5">
             <h2 class="section-title">Contact Information</h2>
             <div class="row">
@@ -635,11 +664,11 @@
                                 <strong>Citizenship:</strong> Vietnam<br>
                                 <strong>Languages:</strong> English (Excellent), Japanese (Good), Vietnamese (Native)
                             </p>
-                        </div>
                     </div>
-                </div>
+                    </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     </div>
 
@@ -648,9 +677,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h5>Dr. Nguyen Xuan Tinh</h5>
-                    <p>Advancing coastal and water resources engineering through innovative research and international collaboration. Specializing in climate-resilient infrastructure and sustainable coastal management solutions.</p>
-                    <p><small>Member of Japan Society of Civil Engineers (JSCE) and International Association for Hydraulic Engineering and Research (IAHR)</small></p>
+                    <h5>Nguyen Xuan Tinh</h5>
+                    <p>Delivering expert consulting services in water resources management, coastal engineering, and climate resilience. Helping governments and organizations build sustainable, climate-adaptive infrastructure through strategic planning and technical excellence.</p>
+                    <p><small>Certified Project Management Professional (PMP) | Member of Japan Society of Civil Engineers (JSCE) and International Association for Hydraulic Engineering and Research (IAHR)</small></p>
                 </div>
                 <div class="col-md-4 text-end">
                     <h5>Professional Links</h5>
@@ -676,8 +705,8 @@
             <hr class="my-4">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2025 Dr. Nguyen Xuan Tinh. All rights reserved. | 
-                    <small>Citations: 744 | h-index: 11 | i10-index: 19 (as of Sep 18, 2025)</small></p>
+                    <p>&copy; 2025 Nguyen Xuan Tinh. All rights reserved. | 
+                    <small>15+ Years Experience | 50+ Projects | 25+ Clients | 12 Countries</small></p>
                 </div>
             </div>
         </div>
