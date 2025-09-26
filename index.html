@@ -292,6 +292,23 @@
             font-size: 0.8rem;
         }
 
+        .countries-list {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin-top: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .countries-list small {
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
+        #country-count:hover {
+            color: var(--accent-color) !important;
+        }
+
         .timeline-item {
             border-left: 3px solid var(--secondary-color);
             padding-left: 2rem;
@@ -401,7 +418,10 @@
                 </div>
                 <div class="col-lg-4 text-center">
                     <div class="profile-img-container">
-                        <img src="assets/images/profile.jpg" alt="Nguyen Xuan Tinh" class="profile-img">
+                        <img src="assets/images/profile.jpg" alt="Nguyen Xuan Tinh" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-placeholder bg-light rounded-circle mx-auto" style="width: 200px; height: 200px; display: none; align-items: center; justify-content: center; border: 3px solid rgba(255,255,255,0.3);">
+                            <i class="fas fa-user text-white" style="font-size: 4rem; opacity: 0.7;"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -720,8 +740,7 @@
                                 <strong>CTI Engineering International Co., Ltd.</strong><br>
                                 Water Resources Management Division<br>
                                 Nihombashi Hamacho F Tower 11fl.<br>
-                                3-21-1, Chuo-ku, Tokyo 103-0007<br>
-                                Japan
+                                3-21-1, Chuo-ku, Tokyo 103-0007, Japan<br>
                             </p>
                         </div>
                     </div>
@@ -735,8 +754,7 @@
                             <p class="card-text">
                                 <strong>Email:</strong> xuantinhsea@gmail.com<br>
                                 <strong>Phone:</strong> +81-80-3338-0268<br>
-                                <strong>Citizenship:</strong> Vietnam<br>
-                                <strong>Languages:</strong> English (Excellent), Japanese (Good), Vietnamese (Native)
+
                             </p>
                     </div>
                     </div>
@@ -782,11 +800,13 @@
                     <p>&copy; 2025 Nguyen Xuan Tinh. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center">
-                    <p><small>15+ Years Experience | 50+ Projects | 25+ Clients | 12 Countries</small></p>
                     <div id="visitor-stats" class="visitor-stats">
                         <small><i class="fas fa-chart-line me-1"></i>Page Views: <span id="page-views">Loading...</span></small>
                         <small class="ms-3"><i class="fas fa-users me-1"></i>Visitors: <span id="visitor-count">Loading...</span></small>
-                        <small class="ms-3"><i class="fas fa-globe me-1"></i>Countries: <span id="country-count">Loading...</span></small>
+                        <small class="ms-3"><i class="fas fa-globe me-1"></i>Countries: <span id="country-count" style="cursor: pointer; text-decoration: underline;" onclick="showCountriesList()">Loading...</span></small>
+                    </div>
+                    <div id="countries-list" class="countries-list" style="display: none; margin-top: 10px;">
+                        <small><i class="fas fa-list me-1"></i>Visitor Countries: <span id="countries-detail"></span></small>
                     </div>
                 </div>
             </div>
@@ -957,6 +977,9 @@
             document.getElementById('visitor-count').textContent = visitorData.count.toLocaleString();
             document.getElementById('page-views').textContent = visitorData.pageViews.toLocaleString();
             document.getElementById('country-count').textContent = visitorData.countries.length;
+            
+            // Update countries list
+            document.getElementById('countries-detail').textContent = visitorData.countries.join(', ');
         }
 
         // Initialize analytics when page loads
@@ -983,6 +1006,21 @@
                 trackEvent('external_link_click', 'External Links', e.target.href);
             }
         });
+
+        // Show/hide countries list
+        function showCountriesList() {
+            const countriesList = document.getElementById('countries-list');
+            const countryCount = document.getElementById('country-count');
+            
+            if (countriesList.style.display === 'none') {
+                countriesList.style.display = 'block';
+                countryCount.innerHTML = 'Hide List';
+                trackEvent('countries_list_view', 'User Interaction', 'Countries list opened');
+            } else {
+                countriesList.style.display = 'none';
+                countryCount.innerHTML = document.getElementById('country-count').textContent;
+            }
+        }
     </script>
 </body>
 </html>
