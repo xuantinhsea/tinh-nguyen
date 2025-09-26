@@ -1,0 +1,79 @@
+# Site settings
+title: "Xuan Tinh - Portfolio"
+description: "Personal and Professional Portfolio - Showcasing my work, skills, and experience"
+author: "Xuan Tinh"
+email: "xuantinhsea@gmail.com"
+url: "https://xuantinhsea.github.io"
+baseurl: "" # Empty for username.github.io repositories
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - .gitignore
+  - .gitattributes
+
+# Include
+include:
+  - _pages
+
+# SEO
+seo:
+  type: "Person"
+  name: "Xuan Tinh"
+  links:
+    - "https://github.com/xuantinhsea"
+    - "https://linkedin.com/in/xuantinhsea"
+    - "https://twitter.com/xuantinhsea"
+
+# Social media
+social:
+  name: "Xuan Tinh"
+  links:
+    - "https://github.com/xuantinhsea"
+    - "https://linkedin.com/in/xuantinhsea"
+    - "https://twitter.com/xuantinhsea"
+    - "https://instagram.com/xuantinhsea"
+
+# Analytics (uncomment and add your tracking ID)
+# google_analytics: "GA_TRACKING_ID"
+
+# Comments (uncomment to enable)
+# disqus:
+#   shortname: "your-disqus-shortname"

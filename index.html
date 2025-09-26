@@ -3,532 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Research Group - Home</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Xuan Tinh - Portfolio</title>
+    <meta name="description" content="Personal and Professional Portfolio - Showcasing my work, skills, and experience">
+    <meta name="keywords" content="portfolio, developer, designer, professional, resume">
+    <meta name="author" content="Xuan Tinh">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Xuan Tinh - Portfolio">
+    <meta property="og:description" content="Personal and Professional Portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xuantinhsea.github.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --text-color: #34495e;
-            --bg-light: #f8f9fa;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .navbar {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #fff !important;
-            transform: translateY(-2px);
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s linear infinite;
-            opacity: 0.3;
-        }
-
-        @keyframes float {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-            border-radius: 2px;
-        }
-
-        .card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .research-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            min-height: 250px;
-        }
-
-        .publications-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            min-height: 250px;
-        }
-
-        .people-card {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            min-height: 250px;
-        }
-
-        .news-card {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            color: white;
-            min-height: 250px;
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-
-        .news-item {
-            border-left: 4px solid var(--secondary-color);
-            background: white;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 0 10px 10px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-        }
-
-        .news-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-
-        .news-date {
-            color: var(--secondary-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 3rem 0 1rem;
-            margin-top: 5rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            border: none;
-            border-radius: 50px;
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <i class="fas fa-atom me-2"></i>Your Research Group
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#research">Research</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#publications">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#people">People</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#news">News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Xuan Tinh</span>
+                </h1>
+                <h2 class="hero-subtitle">Full Stack Developer & UI/UX Designer</h2>
+                <p class="hero-description">
+                    I create beautiful, functional, and user-centered digital experiences. 
+                    Passionate about clean code, innovative design, and continuous learning.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/xuantinhsea" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/xuantinhsea" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/xuantinhsea" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:xuantinhsea@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-avatar">
+                    <img src="assets/images/profile.jpg" alt="Profile Picture" id="profile-img">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 hero-content">
-                    <h1 class="hero-title">Advanced Materials Research Group</h1>
-                    <p class="hero-subtitle">
-                        Pioneering research in computational materials science, quantum physics, and machine learning applications for next-generation technologies.
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate full-stack developer with over 5 years of experience creating 
+                        digital solutions that make a difference. I specialize in modern web technologies 
+                        and have a keen eye for design and user experience.
                     </p>
-                    <a href="#research" class="btn btn-primary btn-lg">
-                        <i class="fas fa-rocket me-2"></i>Explore Our Research
-                    </a>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, contributing to 
+                        open-source projects, or sharing knowledge with the developer community. I believe 
+                        in continuous learning and staying up-to-date with the latest industry trends.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>3+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/about.jpg" alt="About Me">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="container my-5" style="margin-top: 100px !important;">
-        
-        <!-- Overview Cards -->
-        <div class="row g-4 mb-5">
-            <div class="col-md-6 col-lg-3">
-                <div class="card research-card h-100">
-                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-microscope card-icon"></i>
-                        <h5 class="card-title">Research Areas</h5>
-                        <p class="card-text">Quantum materials, computational physics, and AI-driven discovery</p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-vue"></i>
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-angular"></i>
+                            <span>Angular</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="card publications-card h-100">
-                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-file-alt card-icon"></i>
-                        <h5 class="card-title">Publications</h5>
-                        <p class="card-text">50+ peer-reviewed papers in top-tier journals</p>
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>Express.js</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="card people-card h-100">
-                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-users card-icon"></i>
-                        <h5 class="card-title">Team Members</h5>
-                        <p class="card-text">15+ researchers including faculty, postdocs, and students</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="card news-card h-100">
-                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-newspaper card-icon"></i>
-                        <h5 class="card-title">Latest News</h5>
-                        <p class="card-text">Recent achievements and upcoming events</p>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Responsive Design</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-search"></i>
+                            <span>SEO</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Research Section -->
-        <section id="research" class="mb-5">
-            <h2 class="section-title">Research Focus</h2>
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-atom text-primary me-2"></i>Quantum Materials
-                            </h5>
-                            <p class="card-text">
-                                Investigating novel quantum materials with exotic properties for next-generation electronic devices. Our work focuses on topological insulators, superconductors, and quantum dots.
-                            </p>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project1.jpg" alt="E-Commerce Platform">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Stripe</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-laptop-code text-primary me-2"></i>Computational Physics
-                            </h5>
-                            <p class="card-text">
-                                Developing advanced computational methods for materials simulation using density functional theory (DFT), molecular dynamics, and Monte Carlo techniques.
-                            </p>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project2.jpg" alt="Task Management App">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Socket.io</span>
+                            <span>Express</span>
+                            <span>PostgreSQL</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-brain text-primary me-2"></i>Machine Learning
-                            </h5>
-                            <p class="card-text">
-                                Applying machine learning and AI techniques to accelerate materials discovery, predict material properties, and design novel compounds with desired characteristics.
-                            </p>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project3.jpg" alt="Weather Dashboard">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather Dashboard</h3>
+                        <p>A responsive weather dashboard that displays current weather conditions, forecasts, and interactive maps using weather APIs.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Chart.js</span>
+                            <span>API</span>
+                            <span>CSS3</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- News Section -->
-        <section id="news" class="mb-5">
-            <h2 class="section-title">Latest News</h2>
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="news-item">
-                        <div class="news-date">September 2025</div>
-                        <h5>New Paper Published in Nature Materials</h5>
-                        <p>Our latest research on quantum spin liquids has been published in Nature Materials, revealing new insights into exotic magnetic states.</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">August 2025</div>
-                        <h5>Grant Award from NSF</h5>
-                        <p>We have received a $2M grant from the National Science Foundation to continue our research on AI-driven materials discovery.</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">July 2025</div>
-                        <h5>New Team Member</h5>
-                        <p>Dr. Sarah Johnson joins our group as a postdoctoral researcher, bringing expertise in computational condensed matter physics.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Senior Full Stack Developer</h3>
+                        <h4>Tech Company Inc.</h4>
+                        <span class="timeline-date">2022 - Present</span>
+                        <p>Led development of multiple web applications, mentored junior developers, and implemented best practices for code quality and performance.</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5><i class="fas fa-calendar-alt me-2"></i>Upcoming Events</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="mb-3">
-                                    <strong>Oct 15, 2025</strong><br>
-                                    Materials Research Society Fall Meeting
-                                </li>
-                                <li class="mb-3">
-                                    <strong>Nov 8, 2025</strong><br>
-                                    Group Seminar: Quantum Computing Applications
-                                </li>
-                                <li class="mb-3">
-                                    <strong>Dec 3, 2025</strong><br>
-                                    International Conference on AI in Materials
-                                </li>
-                            </ul>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Developer</h3>
+                        <h4>Digital Agency</h4>
+                        <span class="timeline-date">2020 - 2022</span>
+                        <p>Developed responsive websites and web applications for various clients, focusing on user experience and performance optimization.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Frontend Developer</h3>
+                        <h4>Startup Company</h4>
+                        <span class="timeline-date">2019 - 2020</span>
+                        <p>Created interactive user interfaces and collaborated with design teams to implement pixel-perfect designs.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- People Section -->
-        <section id="people" class="mb-5">
-            <h2 class="section-title">Our Team</h2>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <div class="bg-primary rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user text-white" style="font-size: 2rem;"></i>
-                            </div>
-                            <h5 class="card-title">Prof. Your Name</h5>
-                            <p class="text-muted">Principal Investigator</p>
-                            <p class="card-text">PhD in Physics, Expert in quantum materials and computational methods</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>xuantinhsea@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+84 (xxx) xxx-xxxx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ho Chi Minh City, Vietnam</span>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <div class="bg-success rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user text-white" style="font-size: 2rem;"></i>
-                            </div>
-                            <h5 class="card-title">Dr. Postdoc Name</h5>
-                            <p class="text-muted">Postdoctoral Researcher</p>
-                            <p class="card-text">Specialist in machine learning applications for materials science</p>
-                        </div>
+                    <div class="contact-social">
+                        <a href="https://github.com/xuantinhsea" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/xuantinhsea" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/xuantinhsea" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/xuantinhsea" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <div class="bg-warning rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user text-white" style="font-size: 2rem;"></i>
-                            </div>
-                            <h5 class="card-title">Graduate Student</h5>
-                            <p class="text-muted">PhD Student</p>
-                            <p class="card-text">Research focus on computational condensed matter physics</p>
-                        </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="mb-5">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-map-marker-alt text-primary me-2"></i>Location
-                            </h5>
-                            <p class="card-text">
-                                Department of Physics<br>
-                                Your University<br>
-                                123 University Avenue<br>
-                                City, State 12345
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-envelope text-primary me-2"></i>Get in Touch
-                            </h5>
-                            <p class="card-text">
-                                <strong>Email:</strong> yourname@university.edu<br>
-                                <strong>Phone:</strong> (555) 123-4567<br>
-                                <strong>Office:</strong> Physics Building, Room 123
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Your Research Group</h5>
-                    <p>Advancing the frontiers of materials science through computational research and innovation.</p>
-                </div>
-                <div class="col-md-6 text-end">
-                    <h5>Follow Us</h5>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-google-scholar"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p>&copy; 2025 Your Research Group. All rights reserved.</p>
-                </div>
+            <div class="footer-content">
+                <p>&copy; 2024 Xuan Tinh. All rights reserved.</p>
+                <p>Built with ❤️ and modern web technologies</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-        // Add navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(44, 62, 80, 0.95)';
-            } else {
-                navbar.style.backgroundColor = 'transparent';
-            }
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
