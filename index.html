@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Research Group - Home</title>
+    <title>Dr. Nguyen Xuan Tinh - Coastal and Water Resources Specialist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --text-color: #34495e;
-            --bg-light: #f8f9fa;
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #06b6d4;
+            --text-color: #1f2937;
+            --bg-light: #f8fafc;
+            --success-color: #059669;
         }
 
         body {
@@ -23,28 +25,30 @@
 
         .navbar {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
         .navbar-brand {
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
         .nav-link {
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-link:hover {
-            color: #fff !important;
+            color: var(--accent-color) !important;
             transform: translateY(-2px);
         }
 
         .hero-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
             position: relative;
             overflow: hidden;
         }
@@ -52,16 +56,10 @@
         .hero-section::before {
             content: '';
             position: absolute;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s linear infinite;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             opacity: 0.3;
-        }
-
-        @keyframes float {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .hero-content {
@@ -69,16 +67,31 @@
             z-index: 2;
         }
 
+        .profile-img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 4px solid rgba(255,255,255,0.1);
+        }
+
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .hero-credentials {
+            font-size: 1.1rem;
+            opacity: 0.8;
             margin-bottom: 2rem;
         }
 
@@ -112,41 +125,41 @@
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        .research-card {
+        .expertise-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            min-height: 250px;
+            min-height: 200px;
         }
 
         .publications-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, var(--success-color) 0%, #10b981 100%);
             color: white;
-            min-height: 250px;
+            min-height: 200px;
         }
 
-        .people-card {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        .experience-card {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #0891b2 100%);
             color: white;
-            min-height: 250px;
+            min-height: 200px;
         }
 
-        .news-card {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        .education-card {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
             color: white;
-            min-height: 250px;
+            min-height: 200px;
         }
 
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.8;
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
         }
 
-        .news-item {
+        .publication-item {
             border-left: 4px solid var(--secondary-color);
             background: white;
             padding: 1.5rem;
@@ -156,22 +169,61 @@
             transition: all 0.3s ease;
         }
 
-        .news-item:hover {
+        .publication-item:hover {
             transform: translateX(5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
-        .news-date {
-            color: var(--secondary-color);
+        .journal-name {
+            color: var(--success-color);
             font-weight: 600;
             font-size: 0.9rem;
         }
 
-        .footer {
-            background: var(--primary-color);
+        .impact-factor {
+            background: var(--accent-color);
             color: white;
-            padding: 3rem 0 1rem;
-            margin-top: 5rem;
+            padding: 2px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-item {
+            border: 1px solid #e5e7eb;
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .client-tag {
+            background: var(--bg-light);
+            color: var(--text-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
         }
 
         .social-links a {
@@ -179,10 +231,11 @@
             font-size: 1.5rem;
             margin: 0 10px;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .social-links a:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
             transform: translateY(-3px);
         }
 
@@ -200,13 +253,52 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 5rem;
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .education-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--accent-color);
+        }
+
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero-subtitle {
                 font-size: 1.1rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 180px;
             }
         }
     </style>
@@ -216,7 +308,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <i class="fas fa-atom me-2"></i>Your Research Group
+                <i class="fas fa-water me-2"></i>Dr. Nguyen Xuan Tinh
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -227,16 +319,16 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#research">Research</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#publications">Publications</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#people">People</a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#news">News</a>
+                        <a class="nav-link" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -251,13 +343,28 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8 hero-content">
-                    <h1 class="hero-title">Advanced Materials Research Group</h1>
+                    <h1 class="hero-title">Dr. Nguyen Xuan Tinh</h1>
                     <p class="hero-subtitle">
-                        Pioneering research in computational materials science, quantum physics, and machine learning applications for next-generation technologies.
+                        Senior Coastal and Water Resources Specialist
                     </p>
-                    <a href="#research" class="btn btn-primary btn-lg">
-                        <i class="fas fa-rocket me-2"></i>Explore Our Research
+                    <p class="hero-credentials">
+                        <i class="fas fa-graduation-cap me-2"></i>Ph.D. in Civil and Environmental Engineering, Tohoku University<br>
+                        <i class="fas fa-building me-2"></i>CTI Engineering International Co., Ltd.<br>
+                        <i class="fas fa-map-marker-alt me-2"></i>Tokyo, Japan
+                    </p>
+                    <div class="hero-credentials">
+                        <span class="badge bg-success me-2">744 Citations</span>
+                        <span class="badge bg-info me-2">h-index: 11</span>
+                        <span class="badge bg-warning">i10-index: 19</span>
+                    </div>
+                    <a href="#publications" class="btn btn-primary btn-lg mt-3">
+                        <i class="fas fa-scroll me-2"></i>View Publications
                     </a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="profile-placeholder bg-light rounded-circle mx-auto" style="width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255,255,255,0.3);">
+                        <i class="fas fa-user text-white" style="font-size: 4rem; opacity: 0.7;"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -269,125 +376,83 @@
         <!-- Overview Cards -->
         <div class="row g-4 mb-5">
             <div class="col-md-6 col-lg-3">
-                <div class="card research-card h-100">
+                <div class="card expertise-card h-100">
                     <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-microscope card-icon"></i>
-                        <h5 class="card-title">Research Areas</h5>
-                        <p class="card-text">Quantum materials, computational physics, and AI-driven discovery</p>
+                        <i class="fas fa-water card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                        <h5 class="card-title">Coastal Engineering</h5>
+                        <p class="card-text">Coastal morphodynamics, tsunami modeling, and shoreline evolution</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card publications-card h-100">
                     <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-file-alt card-icon"></i>
+                        <i class="fas fa-file-alt card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                        <span class="stat-number">50+</span>
                         <h5 class="card-title">Publications</h5>
-                        <p class="card-text">50+ peer-reviewed papers in top-tier journals</p>
+                        <p class="card-text">Peer-reviewed papers in top journals</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="card people-card h-100">
+                <div class="card experience-card h-100">
                     <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-users card-icon"></i>
-                        <h5 class="card-title">Team Members</h5>
-                        <p class="card-text">15+ researchers including faculty, postdocs, and students</p>
+                        <i class="fas fa-briefcase card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                        <span class="stat-number">15+</span>
+                        <h5 class="card-title">Years Experience</h5>
+                        <p class="card-text">International consulting and research</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="card news-card h-100">
+                <div class="card education-card h-100">
                     <div class="card-body text-center d-flex flex-column justify-content-center">
-                        <i class="fas fa-newspaper card-icon"></i>
-                        <h5 class="card-title">Latest News</h5>
-                        <p class="card-text">Recent achievements and upcoming events</p>
+                        <i class="fas fa-globe card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+                        <span class="stat-number">12</span>
+                        <h5 class="card-title">Countries</h5>
+                        <p class="card-text">Global project experience</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Research Section -->
-        <section id="research" class="mb-5">
-            <h2 class="section-title">Research Focus</h2>
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-atom text-primary me-2"></i>Quantum Materials
-                            </h5>
-                            <p class="card-text">
-                                Investigating novel quantum materials with exotic properties for next-generation electronic devices. Our work focuses on topological insulators, superconductors, and quantum dots.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-laptop-code text-primary me-2"></i>Computational Physics
-                            </h5>
-                            <p class="card-text">
-                                Developing advanced computational methods for materials simulation using density functional theory (DFT), molecular dynamics, and Monte Carlo techniques.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <i class="fas fa-brain text-primary me-2"></i>Machine Learning
-                            </h5>
-                            <p class="card-text">
-                                Applying machine learning and AI techniques to accelerate materials discovery, predict material properties, and design novel compounds with desired characteristics.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- News Section -->
-        <section id="news" class="mb-5">
-            <h2 class="section-title">Latest News</h2>
+        <!-- About Section -->
+        <section id="about" class="mb-5">
+            <h2 class="section-title">About Me</h2>
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="news-item">
-                        <div class="news-date">September 2025</div>
-                        <h5>New Paper Published in Nature Materials</h5>
-                        <p>Our latest research on quantum spin liquids has been published in Nature Materials, revealing new insights into exotic magnetic states.</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">August 2025</div>
-                        <h5>Grant Award from NSF</h5>
-                        <p>We have received a $2M grant from the National Science Foundation to continue our research on AI-driven materials discovery.</p>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">July 2025</div>
-                        <h5>New Team Member</h5>
-                        <p>Dr. Sarah Johnson joins our group as a postdoctoral researcher, bringing expertise in computational condensed matter physics.</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">
+                                <i class="fas fa-user-graduate me-2"></i>Professional Background
+                            </h5>
+                            <p class="card-text">
+                                I am a Senior Coastal and Water Resources Specialist at CTI Engineering International Co., Ltd., with over 15 years of experience in coastal engineering, flood management, and climate change adaptation. My expertise spans hydrodynamic modeling, sediment transport analysis, and coastal morphodynamics.
+                            </p>
+                            <p class="card-text">
+                                My research focuses on understanding and predicting coastal and estuarine processes, particularly in the context of climate change and extreme events. I have led numerous international projects across Asia, America, and Europe, working with prestigious organizations including ADB, JICA, World Bank, and various government agencies.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5><i class="fas fa-calendar-alt me-2"></i>Upcoming Events</h5>
+                            <h5><i class="fas fa-award me-2"></i>Recent Awards</h5>
                         </div>
                         <div class="card-body">
                             <ul class="list-unstyled">
-                                <li class="mb-3">
-                                    <strong>Oct 15, 2025</strong><br>
-                                    Materials Research Society Fall Meeting
+                                <li class="mb-2">
+                                    <strong>2021</strong><br>
+                                    JSCE Best Research Paper Award
                                 </li>
-                                <li class="mb-3">
-                                    <strong>Nov 8, 2025</strong><br>
-                                    Group Seminar: Quantum Computing Applications
+                                <li class="mb-2">
+                                    <strong>2021</strong><br>
+                                    JAMSTEC Nakanishi Award
                                 </li>
-                                <li class="mb-3">
-                                    <strong>Dec 3, 2025</strong><br>
-                                    International Conference on AI in Materials
+                                <li class="mb-2">
+                                    <strong>2020</strong><br>
+                                    Coastal Engineering Journal Best Paper Award
                                 </li>
                             </ul>
                         </div>
@@ -396,44 +461,143 @@
             </div>
         </section>
 
-        <!-- People Section -->
-        <section id="people" class="mb-5">
-            <h2 class="section-title">Our Team</h2>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <div class="bg-primary rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user text-white" style="font-size: 2rem;"></i>
+        <!-- Education Section -->
+        <section id="education" class="mb-5">
+            <h2 class="section-title">Education</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="education-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h5 class="mb-1 text-primary">Doctor of Engineering in Civil and Environmental Engineering</h5>
+                                <p class="mb-1"><strong>Tohoku University, Japan</strong></p>
+                                <small class="text-muted">September 2009</small>
                             </div>
-                            <h5 class="card-title">Prof. Your Name</h5>
-                            <p class="text-muted">Principal Investigator</p>
-                            <p class="card-text">PhD in Physics, Expert in quantum materials and computational methods</p>
+                            <div class="col-md-3 text-end">
+                                <i class="fas fa-university text-primary" style="font-size: 2rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h5 class="mb-1 text-primary">Master of Engineering in Water Resources Engineering</h5>
+                                <p class="mb-1"><strong>Lund University, Sweden</strong></p>
+                                <small class="text-muted">January 2006</small>
+                            </div>
+                            <div class="col-md-3 text-end">
+                                <i class="fas fa-university text-primary" style="font-size: 2rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h5 class="mb-1 text-primary">Bachelor of Science in Civil Engineering</h5>
+                                <p class="mb-1"><strong>Hanoi University of Sciences, Vietnam</strong></p>
+                                <small class="text-muted">June 2003</small>
+                            </div>
+                            <div class="col-md-3 text-end">
+                                <i class="fas fa-university text-primary" style="font-size: 2rem;"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <div class="bg-success rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user text-white" style="font-size: 2rem;"></i>
-                            </div>
-                            <h5 class="card-title">Dr. Postdoc Name</h5>
-                            <p class="text-muted">Postdoctoral Researcher</p>
-                            <p class="card-text">Specialist in machine learning applications for materials science</p>
-                        </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="mb-5">
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="publication-item">
+                        <h6 class="mb-2">Spatio-temporal dynamics monitoring of surface water bodies in Nhat Le River Basin, Vietnam, by Google Earth Engine</h6>
+                        <div class="journal-name mb-1">J. Water and Climate Change, 2024 <span class="impact-factor">IF: 2.8</span></div>
+                    </div>
+                    <div class="publication-item">
+                        <h6 class="mb-2">Hydrologic-geotechnical Modelling of Shallow Landslide and Flood Hazards caused by Heavy Rainfall</h6>
+                        <div class="journal-name mb-1">Engineering Geology, 2023 <span class="impact-factor">IF: 6.902</span></div>
+                    </div>
+                    <div class="publication-item">
+                        <h6 class="mb-2">Evaluation of Cua Lo Estuary's Morpho-Dynamic Evolution and Its Impact on Port Planning</h6>
+                        <div class="journal-name mb-1">J. of Mar. Sci. and Eng., 2023 <span class="impact-factor">IF: 2.744</span></div>
+                    </div>
+                    <div class="publication-item">
+                        <h6 class="mb-2">Morphology Recovery and Convergence of Topographic Evolution in the Natori River Mouth after the 2011 Tohoku Tsunami</h6>
+                        <div class="journal-name mb-1">Water, 2022 <span class="impact-factor">IF: 3.103</span></div>
+                    </div>
+                    <div class="publication-item">
+                        <h6 class="mb-2">Advanced Machine Learning Techniques Application for Predicting Nha Trang Shorelines</h6>
+                        <div class="journal-name mb-1">J. of IEEE Access, 2021 <span class="impact-factor">IF: 3.367</span></div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="https://scholar.google.com" target="_blank" class="btn btn-outline-primary">
+                            <i class="ai ai-google-scholar me-2"></i>View Full Publication List
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <div class="bg-warning rounded-circle mx-auto mb-3" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user text-white" style="font-size: 2rem;"></i>
-                            </div>
-                            <h5 class="card-title">Graduate Student</h5>
-                            <p class="text-muted">PhD Student</p>
-                            <p class="card-text">Research focus on computational condensed matter physics</p>
+            </div>
+        </section>
+
+        <!-- Current Projects Section -->
+        <section id="projects" class="mb-5">
+            <h2 class="section-title">Current Projects</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="project-item">
+                        <h5 class="project-title">Framework Agreement - Coastal Resilience</h5>
+                        <div class="project-meta">
+                            <i class="fas fa-calendar me-1"></i>September 2025 - June 2027 | 
+                            <i class="fas fa-map-marker-alt me-1"></i>Southeast Asia & Pacific
                         </div>
+                        <span class="client-tag">Asian Development Bank (ADB)</span>
+                        <p class="mt-2">Leading coastal resilience initiatives across Southeast Asia and Pacific countries, focusing on climate-resilient practices integration, capacity development, and nature-based adaptation solutions.</p>
+                    </div>
+                    <div class="project-item">
+                        <h5 class="project-title">Project for Capacity Development of Flood Disaster Risk Reduction in Timor Leste</h5>
+                        <div class="project-meta">
+                            <i class="fas fa-calendar me-1"></i>June 2025 - June 2027 | 
+                            <i class="fas fa-map-marker-alt me-1"></i>Timor Leste
+                        </div>
+                        <span class="client-tag">JICA</span>
+                        <p class="mt-2">Enhancing flood disaster risk reduction capacity through technical training, climate change evaluation, and inundation analysis for government agencies.</p>
+                    </div>
+                    <div class="project-item">
+                        <h5 class="project-title">Improvement of Flood Control Measures in the Pasig-Marikina River Basin</h5>
+                        <div class="project-meta">
+                            <i class="fas fa-calendar me-1"></i>April 2024 - Present | 
+                            <i class="fas fa-map-marker-alt me-1"></i>Philippines
+                        </div>
+                        <span class="client-tag">DPWH Philippines / JICA</span>
+                        <p class="mt-2">Assessing climate change impacts on basin hydrology and developing climate-resilient flood control measures for the Pasig-Marikina River Basin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-5">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="timeline-item">
+                        <h5 class="text-primary">Senior Coastal and Water Resources Engineer</h5>
+                        <p class="mb-1"><strong>CTI Engineering International Co., Ltd.</strong></p>
+                        <small class="text-muted">April 2022 - Present | Tokyo, Japan</small>
+                        <p class="mt-2">Leading international consulting projects in coastal resilience, flood management, and climate change adaptation across Asia-Pacific region.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5 class="text-primary">Assistant Professor</h5>
+                        <p class="mb-1"><strong>Department of Civil Engineering, Tohoku University</strong></p>
+                        <small class="text-muted">April 2017 - March 2022 | Japan</small>
+                        <p class="mt-2">Conducted research on coastal morphodynamics, tsunami modeling, and taught graduate courses in coastal engineering.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5 class="text-primary">Lecturer and Senior Researcher</h5>
+                        <p class="mb-1"><strong>Department of Hydraulic Engineering, Thuyloi University</strong></p>
+                        <small class="text-muted">April 2015 - February 2017 | Vietnam</small>
+                        <p class="mt-2">Teaching and research in hydraulic engineering, water resources management, and coastal processes.</p>
                     </div>
                 </div>
             </div>
@@ -441,33 +605,35 @@
 
         <!-- Contact Section -->
         <section id="contact" class="mb-5">
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title">Contact Information</h2>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <i class="fas fa-map-marker-alt text-primary me-2"></i>Location
+                                <i class="fas fa-building text-primary me-2"></i>Professional Address
                             </h5>
                             <p class="card-text">
-                                Department of Physics<br>
-                                Your University<br>
-                                123 University Avenue<br>
-                                City, State 12345
+                                <strong>CTI Engineering International Co., Ltd.</strong><br>
+                                Water Resources Management Division<br>
+                                Nihombashi Hamacho F Tower 11fl.<br>
+                                3-21-1, Chuo-ku, Tokyo 103-0007<br>
+                                Japan
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <i class="fas fa-envelope text-primary me-2"></i>Get in Touch
                             </h5>
                             <p class="card-text">
-                                <strong>Email:</strong> yourname@university.edu<br>
-                                <strong>Phone:</strong> (555) 123-4567<br>
-                                <strong>Office:</strong> Physics Building, Room 123
+                                <strong>Email:</strong> xuantinhsea@gmail.com<br>
+                                <strong>Phone:</strong> +81-80-3338-0268<br>
+                                <strong>Citizenship:</strong> Vietnam<br>
+                                <strong>Languages:</strong> English (Excellent), Japanese (Good), Vietnamese (Native)
                             </p>
                         </div>
                     </div>
@@ -481,24 +647,37 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h5>Your Research Group</h5>
-                    <p>Advancing the frontiers of materials science through computational research and innovation.</p>
+                <div class="col-md-8">
+                    <h5>Dr. Nguyen Xuan Tinh</h5>
+                    <p>Advancing coastal and water resources engineering through innovative research and international collaboration. Specializing in climate-resilient infrastructure and sustainable coastal management solutions.</p>
+                    <p><small>Member of Japan Society of Civil Engineers (JSCE) and International Association for Hydraulic Engineering and Research (IAHR)</small></p>
                 </div>
-                <div class="col-md-6 text-end">
-                    <h5>Follow Us</h5>
+                <div class="col-md-4 text-end">
+                    <h5>Professional Links</h5>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-google-scholar"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="https://scholar.google.com" target="_blank" title="Google Scholar">
+                            <i class="ai ai-google-scholar"></i>
+                        </a>
+                        <a href="https://www.researchgate.net" target="_blank" title="ResearchGate">
+                            <i class="ai ai-researchgate"></i>
+                        </a>
+                        <a href="https://orcid.org/0000-0003-4156-6230" target="_blank" title="ORCID">
+                            <i class="ai ai-orcid"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:xuantinhsea@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             <hr class="my-4">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2025 Your Research Group. All rights reserved.</p>
+                    <p>&copy; 2025 Dr. Nguyen Xuan Tinh. All rights reserved. | 
+                    <small>Citations: 744 | h-index: 11 | i10-index: 19 (as of Sep 18, 2025)</small></p>
                 </div>
             </div>
         </div>
@@ -524,10 +703,93 @@
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(44, 62, 80, 0.95)';
+                navbar.style.backgroundColor = 'rgba(30, 58, 138, 0.95)';
             } else {
                 navbar.style.backgroundColor = 'transparent';
             }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and timeline items
+        document.querySelectorAll('.card, .publication-item, .project-item, .timeline-item, .education-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', function() {
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                typeWriter(heroTitle, originalText, 80);
+            }
+        });
+
+        // Add counter animation for statistics
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // Animate counters when they come into view
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target.querySelector('.stat-number');
+                    if (counter && !counter.classList.contains('animated')) {
+                        counter.classList.add('animated');
+                        const text = counter.textContent;
+                        const number = parseInt(text.replace(/\D/g, ''));
+                        if (number) {
+                            animateCounter(counter, number);
+                        }
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            counterObserver.observe(card);
         });
     </script>
 </body>
