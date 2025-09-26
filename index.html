@@ -7,6 +7,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
     <style>
         :root {
             --primary-color: #1f2937;
@@ -774,7 +784,8 @@
                 <div class="col-md-6 text-center">
                     <p><small>15+ Years Experience | 50+ Projects | 25+ Clients | 12 Countries</small></p>
                     <div id="visitor-stats" class="visitor-stats">
-                        <small><i class="fas fa-users me-1"></i>Visitors: <span id="visitor-count">Loading...</span></small>
+                        <small><i class="fas fa-chart-line me-1"></i>Page Views: <span id="page-views">Loading...</span></small>
+                        <small class="ms-3"><i class="fas fa-users me-1"></i>Visitors: <span id="visitor-count">Loading...</span></small>
                         <small class="ms-3"><i class="fas fa-globe me-1"></i>Countries: <span id="country-count">Loading...</span></small>
                     </div>
                 </div>
@@ -891,22 +902,48 @@
             counterObserver.observe(card);
         });
 
-        // Visitor tracking functionality
+        // Google Analytics integration
+        function initializeAnalytics() {
+            // Check if Google Analytics is loaded
+            if (typeof gtag !== 'undefined') {
+                // Track page view
+                gtag('event', 'page_view', {
+                    page_title: document.title,
+                    page_location: window.location.href
+                });
+                
+                // Set up real-time data fetching (simplified approach)
+                // Note: In a real implementation, you would use Google Analytics Reporting API
+                // For now, we'll use a combination of localStorage and simulated data
+                updateVisitorStats();
+            } else {
+                // Fallback to localStorage if GA is not available
+                updateVisitorStats();
+            }
+        }
+
+        // Visitor tracking functionality (enhanced with GA integration)
         function updateVisitorStats() {
             // Get existing visitor data from localStorage
-            let visitorData = JSON.parse(localStorage.getItem('visitorData') || '{"count": 0, "countries": new Set()}');
+            let visitorData = JSON.parse(localStorage.getItem('visitorData') || '{"count": 0, "pageViews": 0, "countries": []}');
             
-            // Increment visitor count
-            visitorData.count += 1;
+            // Increment visitor count (unique visitors)
+            const sessionKey = 'portfolio_session_' + Date.now();
+            const lastVisit = localStorage.getItem('lastVisit');
+            const now = Date.now();
+            
+            // Only increment visitor count if it's been more than 30 minutes since last visit
+            if (!lastVisit || (now - parseInt(lastVisit)) > 30 * 60 * 1000) {
+                visitorData.count += 1;
+                localStorage.setItem('lastVisit', now.toString());
+            }
+            
+            // Always increment page views
+            visitorData.pageViews += 1;
             
             // Get country from timezone (simplified approach)
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             const country = timezone.split('/')[0] || 'Unknown';
-            
-            // Convert Set to Array for localStorage
-            if (!Array.isArray(visitorData.countries)) {
-                visitorData.countries = Array.from(visitorData.countries || []);
-            }
             
             // Add country if not already present
             if (!visitorData.countries.includes(country)) {
@@ -918,12 +955,33 @@
             
             // Update display
             document.getElementById('visitor-count').textContent = visitorData.count.toLocaleString();
+            document.getElementById('page-views').textContent = visitorData.pageViews.toLocaleString();
             document.getElementById('country-count').textContent = visitorData.countries.length;
         }
 
-        // Initialize visitor stats when page loads
+        // Initialize analytics when page loads
         window.addEventListener('load', function() {
-            updateVisitorStats();
+            initializeAnalytics();
+        });
+
+        // Track additional events
+        function trackEvent(eventName, eventCategory, eventLabel) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    event_category: eventCategory,
+                    event_label: eventLabel
+                });
+            }
+        }
+
+        // Track button clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('a[href^="#"]')) {
+                trackEvent('navigation_click', 'Navigation', e.target.textContent.trim());
+            }
+            if (e.target.matches('a[href^="http"]')) {
+                trackEvent('external_link_click', 'External Links', e.target.href);
+            }
         });
     </script>
 </body>
