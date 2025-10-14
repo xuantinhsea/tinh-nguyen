@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyen Xuan Tinh - Coastal & Water Resources Specialist </title>
+    <title>Nguyen Xuan Tinh - Senior Consultant & Water Resources Expert</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" rel="stylesheet">
@@ -359,6 +359,351 @@
             border-left: 4px solid var(--accent-color);
         }
 
+        /* ===== BLOG STYLES ===== */
+        .blog-header {
+            background: linear-gradient(135deg, var(--bg-light), white);
+            border: none;
+        }
+
+        .blog-filters .btn-group .btn {
+            border-radius: 25px;
+            margin-right: 0.5rem;
+            padding: 8px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .blog-filters .btn.active {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .blog-post {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .blog-post-header {
+            padding: 1.5rem 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .blog-post-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .blog-post-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--bg-light);
+        }
+
+        .blog-author-info h6 {
+            margin: 0;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .blog-post-date {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .blog-post-category {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .blog-post-category.research {
+            background: #8b5cf6;
+        }
+
+        .blog-post-category.project-update {
+            background: #10b981;
+        }
+
+        .blog-post-category.technical {
+            background: #f59e0b;
+        }
+
+        .blog-post-category.industry-news {
+            background: #ef4444;
+        }
+
+        .blog-post-category.opinion {
+            background: #6366f1;
+        }
+
+        .blog-post-category.announcement {
+            background: #06b6d4;
+        }
+
+        .blog-post-content {
+            padding: 0 1.5rem;
+        }
+
+        .blog-post-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1rem 0;
+            line-height: 1.4;
+        }
+
+        .blog-post-excerpt {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-tag {
+            background: var(--bg-light);
+            color: var(--text-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .blog-post-actions {
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .blog-actions-left {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .blog-action-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .blog-action-btn:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        .blog-action-btn.liked {
+            color: #e91e63;
+        }
+
+        .blog-action-btn.liked:hover {
+            background: rgba(233, 30, 99, 0.1);
+        }
+
+        .blog-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .blog-read-more {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .blog-read-more:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Comment Styles */
+        .comment-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+            padding: 12px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .comment-item:hover {
+            background: #f0f0f0;
+        }
+
+        .comment-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        .comment-date {
+            font-size: 0.8rem;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .comment-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .comment-action {
+            color: var(--text-color);
+            text-decoration: none;
+            opacity: 0.7;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .comment-action:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+
+        .comment-action.liked {
+            color: #e91e63;
+            opacity: 1;
+        }
+
+        /* Modal Enhancements */
+        .modal-content {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 1.5rem;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        /* Form Enhancements */
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.15);
+        }
+
+        /* Animation Classes */
+        .blog-post-enter {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: blogPostEnter 0.5s ease forwards;
+        }
+
+        @keyframes blogPostEnter {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .like-animation {
+            animation: likeAnimation 0.3s ease;
+        }
+
+        @keyframes likeAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Loading States */
+        .loading-post {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Blog Search Highlight */
+        .search-highlight {
+            background: rgba(255, 235, 59, 0.4);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.2rem;
@@ -372,6 +717,32 @@
                 width: 150px;
                 height: 180px;
             }
+
+            .blog-post-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .blog-post-actions {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .blog-actions-left {
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            .blog-filters .btn-group {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .blog-filters .btn {
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -380,7 +751,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <!-- class="fas fa-briefcase me-2"></i>Nguyen Xuan Tinh-->
+                <i class="fas fa-briefcase me-2"></i>Nguyen Xuan Tinh
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -406,6 +777,9 @@
                         <a class="nav-link" href="#publications">Publications</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#links">Links</a>
                     </li>
                     <li class="nav-item">
@@ -423,7 +797,7 @@
                 <div class="col-lg-8 hero-content">
                     <h1 class="hero-title">Nguyen Xuan Tinh</h1>
                     <p class="hero-subtitle">
-                        Senior Coastal & Water Resources Specialist
+                        Senior Consultant & Water Resources Expert
                     </p>
                     <p class="hero-credentials">
                         <i class="fas fa-graduation-cap me-2"></i>Ph.D. in Civil and Environmental Engineering, Tohoku University<br>
@@ -432,7 +806,7 @@
                     </p>
                     <div class="hero-credentials">
                         <span class="badge bg-success me-2">15+ Years Experience</span>
-                        <span class="badge bg-info me-2">20+ Projects</span>
+                        <span class="badge bg-info me-2">50+ Projects</span>
                         <span class="badge bg-warning">12 Countries</span>
                 </div>
                     <a href="#services" class="btn btn-primary btn-lg mt-3 me-3">
@@ -472,7 +846,7 @@
                 <div class="card projects-card h-100">
                     <div class="card-body text-center d-flex flex-column justify-content-center">
                         <i class="fas fa-project-diagram card-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
-                        <span class="stat-number">20+</span>
+                        <span class="stat-number">50+</span>
                         <h5 class="card-title">Projects</h5>
                         <p class="card-text">International consulting projects</p>
                         </div>
@@ -527,7 +901,7 @@
                         <div class="card-body">
                             <ul class="list-unstyled">
                                 <li class="mb-2">
-                                    <strong>2025</strong><br>
+                                    <strong>2024</strong><br>
                                     Led $5M+ coastal resilience projects
                                 </li>
                                 <li class="mb-2">
@@ -713,13 +1087,13 @@
                         <p class="mt-2"><strong>Role:</strong> Technical Lead | <strong>Value:</strong> $1.8M | <strong>Scope:</strong> Leading capacity development program for government agencies, including technical training, climate change evaluation, and flood risk assessment system development.</p>
                     </div>
                     <div class="project-item">
-                        <h5 class="project-title">Improvement of Flood Control Measures in the Cagayan River Basin</h5>
+                        <h5 class="project-title">Improvement of Flood Control Measures in the Pasig-Marikina River Basin</h5>
                         <div class="project-meta">
                             <i class="fas fa-calendar me-1"></i>April 2024 - Present | 
                             <i class="fas fa-map-marker-alt me-1"></i>Philippines
                         </div>
                         <span class="client-tag">DPWH Philippines / JICA</span>
-                        <p class="mt-2"><strong>Role:</strong> Senior Consultant | <strong>Value:</strong> $3.2M | <strong>Scope:</strong> Leading comprehensive flood risk assessment and developing climate-resilient flood control strategies for Cagayan critical river basin.</p>
+                        <p class="mt-2"><strong>Role:</strong> Senior Consultant | <strong>Value:</strong> $3.2M | <strong>Scope:</strong> Leading comprehensive flood risk assessment and developing climate-resilient flood control strategies for Metro Manila's critical river basin.</p>
                     </div>
             </div>
         </div>
@@ -751,6 +1125,163 @@
             </div>
         </div>
     </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="mb-5">
+            <h2 class="section-title">Blog & Insights</h2>
+            
+            <!-- Blog Header -->
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="blog-header card">
+                        <div class="card-body text-center">
+                            <h4 class="text-primary mb-3">
+                                <i class="fas fa-pen-alt me-2"></i>Share Your Thoughts
+                            </h4>
+                            <p class="text-muted mb-4">Stay connected with the latest insights, research findings, and project updates in water resources and coastal engineering.</p>
+                            <button class="btn btn-primary" onclick="toggleCreatePost()">
+                                <i class="fas fa-plus me-2"></i>Create New Post
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Post Form (Initially Hidden) -->
+            <div id="create-post-form" class="row mb-4" style="display: none;">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-edit me-2"></i>Create New Post
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="blog-post-form">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="post-title" placeholder="Post title..." required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="post-content" rows="5" placeholder="What's on your mind about water resources, coastal engineering, or climate resilience?" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" id="post-category">
+                                        <option value="research">Research</option>
+                                        <option value="project-update">Project Update</option>
+                                        <option value="industry-news">Industry News</option>
+                                        <option value="technical">Technical Discussion</option>
+                                        <option value="opinion">Opinion</option>
+                                        <option value="announcement">Announcement</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="post-tags" placeholder="Tags (separate with commas): coastal engineering, climate change, etc.">
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-secondary me-2" onclick="toggleCreatePost()">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane me-2"></i>Publish Post
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Filter -->
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="blog-filters card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-outline-primary active" onclick="filterPosts('all')">All Posts</button>
+                                        <button type="button" class="btn btn-outline-primary" onclick="filterPosts('research')">Research</button>
+                                        <button type="button" class="btn btn-outline-primary" onclick="filterPosts('project-update')">Projects</button>
+                                        <button type="button" class="btn btn-outline-primary" onclick="filterPosts('technical')">Technical</button>
+                                        <button type="button" class="btn btn-outline-primary" onclick="filterPosts('industry-news')">Industry</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="search-posts" placeholder="Search posts...">
+                                        <button class="btn btn-outline-secondary" type="button">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Posts Container -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="blog-posts-container">
+                        <!-- Blog posts will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Posts -->
+            <div class="row mt-4">
+                <div class="col-lg-12 text-center">
+                    <button id="load-more-posts" class="btn btn-outline-primary" onclick="loadMorePosts()" style="display: none;">
+                        <i class="fas fa-arrow-down me-2"></i>Load More Posts
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comment Modal -->
+        <div class="modal fade" id="commentModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="fas fa-comments me-2"></i>Comments
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modal-post-content" class="mb-4">
+                            <!-- Post content will be inserted here -->
+                        </div>
+                        
+                        <!-- Add Comment Form -->
+                        <div class="add-comment-form mb-4">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="assets/images/photo.png" alt="Your Avatar" class="rounded-circle" width="40" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; display: none;">
+                                        <i class="fas fa-user text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <form id="comment-form">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="comment-text" placeholder="Write a comment..." required>
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comments List -->
+                        <div id="comments-list">
+                            <!-- Comments will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Links Section -->
         <section id="links" class="mb-5">
@@ -813,6 +1344,8 @@
                             </h5>
                             <p class="card-text">
                                 <strong>Email:</strong> xuantinhsea@gmail.com<br>
+                                <strong>Phone:</strong> +81-80-3338-0268<br>
+
                             </p>
                     </div>
                     </div>
@@ -826,11 +1359,11 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <!--<div class="col-md-8">-->
-                   <!-- <h5>Nguyen Xuan Tinh</h5>-->
-                   <!-- <p>Delivering expert consulting services in water resources management, coastal engineering, and climate resilience. Helping governments and organizations build sustainable, climate-adaptive infrastructure through strategic planning and technical excellence.</p>-->
-                  <!-- <p><small>Certified Project Management Professional (PMP) | Member of Japan Society of Civil Engineers (JSCE) and International Association for Hydraulic Engineering and Research (IAHR)</small></p>-->
-               <!-- </div>-->
+                <div class="col-md-8">
+                    <h5>Nguyen Xuan Tinh</h5>
+                    <p>Delivering expert consulting services in water resources management, coastal engineering, and climate resilience. Helping governments and organizations build sustainable, climate-adaptive infrastructure through strategic planning and technical excellence.</p>
+                    <p><small>Certified Project Management Professional (PMP) | Member of Japan Society of Civil Engineers (JSCE) and International Association for Hydraulic Engineering and Research (IAHR)</small></p>
+                </div>
                 <div class="col-md-4 text-end">
                     <h5>Professional Links</h5>
                     <div class="social-links">
@@ -1079,19 +1612,476 @@
                 countryCount.innerHTML = document.getElementById('country-count').textContent;
             }
         }
+
+        // ===== BLOG FUNCTIONALITY =====
+        
+        // Blog data storage
+        let blogPosts = [];
+        let currentPostId = null;
+        let postsPerPage = 5;
+        let currentPage = 0;
+
+        // Initialize blog with sample data
+        function initializeBlog() {
+            // Load sample blog posts
+            blogPosts = [
+                {
+                    id: 1,
+                    title: "Innovative Coastal Protection Strategies for Climate Resilience",
+                    content: "As climate change continues to impact our coastal communities, developing innovative protection strategies has become more critical than ever. In this post, I'll share insights from our recent project in the Philippines where we implemented nature-based solutions combined with traditional engineering approaches to create a resilient coastal defense system.\n\nOur multi-faceted approach included:\n\n1. Mangrove restoration programs that act as natural barriers\n2. Hybrid sea walls that incorporate living shoreline elements\n3. Community-based early warning systems\n4. Sustainable drainage infrastructure\n\nThe results have been promising, with a 40% reduction in coastal erosion and significantly improved community preparedness for extreme weather events.",
+                    category: "research",
+                    tags: ["coastal engineering", "climate resilience", "nature-based solutions", "Philippines"],
+                    author: "Nguyen Xuan Tinh",
+                    authorAvatar: "assets/images/photo.png",
+                    date: new Date(2025, 0, 10),
+                    likes: 15,
+                    comments: [
+                        {
+                            id: 1,
+                            author: "Dr. Maria Santos",
+                            avatar: null,
+                            text: "Excellent work! The integration of mangrove restoration with engineering solutions is exactly what we need more of. Have you considered expanding this approach to other Southeast Asian coastal areas?",
+                            date: new Date(2025, 0, 11),
+                            likes: 3,
+                            liked: false
+                        },
+                        {
+                            id: 2,
+                            author: "James Chen",
+                            avatar: null,
+                            text: "The 40% reduction in erosion is impressive. Could you share more details about the monitoring methodology used?",
+                            date: new Date(2025, 0, 11),
+                            likes: 1,
+                            liked: false
+                        }
+                    ],
+                    liked: false
+                },
+                {
+                    id: 2,
+                    title: "ADB Framework Agreement: Strengthening Regional Coastal Resilience",
+                    content: "I'm excited to announce that our team has been selected for the Asian Development Bank's Framework Agreement on Coastal Resilience, covering Southeast Asia and Pacific regions through 2027.\n\nThis $2.5M initiative will focus on:\n\n• Developing climate-resilient coastal infrastructure\n• Building local capacity in 8 countries\n• Creating standardized assessment methodologies\n• Establishing knowledge-sharing platforms\n\nThis represents a significant step forward in regional cooperation for climate adaptation. Looking forward to collaborating with governments, communities, and fellow experts across the region.",
+                    category: "announcement",
+                    tags: ["ADB", "coastal resilience", "Southeast Asia", "climate adaptation"],
+                    author: "Nguyen Xuan Tinh",
+                    authorAvatar: "assets/images/photo.png",
+                    date: new Date(2025, 0, 8),
+                    likes: 28,
+                    comments: [
+                        {
+                            id: 3,
+                            author: "Dr. Kenji Tanaka",
+                            avatar: null,
+                            text: "Congratulations! This is exactly the kind of regional collaboration needed. Will there be opportunities for academic partnerships?",
+                            date: new Date(2025, 0, 9),
+                            likes: 2,
+                            liked: false
+                        }
+                    ],
+                    liked: false
+                },
+                {
+                    id: 3,
+                    title: "Understanding Flood-Induced Levee Failures: Lessons from Typhoon Hagibis",
+                    content: "Our recent research published in Water journal provides new insights into the mechanisms behind levee breaching during the devastating 2019 Typhoon Hagibis in Marumori Town, Japan.\n\nKey findings include:\n\n🔬 Detailed analysis of soil saturation patterns\n🌊 Critical overflow threshold identification\n📊 Improved prediction models for levee stability\n\nThis research contributes to better design standards for flood protection infrastructure and enhanced early warning systems. The lessons learned are applicable to flood-prone regions worldwide.\n\n#FloodRiskManagement #Infrastructure #Research",
+                    category: "research",
+                    tags: ["flood management", "levee design", "typhoon", "Japan", "research"],
+                    author: "Nguyen Xuan Tinh",
+                    authorAvatar: "assets/images/photo.png",
+                    date: new Date(2025, 0, 5),
+                    likes: 12,
+                    comments: [],
+                    liked: false
+                }
+            ];
+            
+            renderBlogPosts();
+        }
+
+        // Toggle create post form
+        function toggleCreatePost() {
+            const form = document.getElementById('create-post-form');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                form.style.display = 'none';
+                // Clear form
+                document.getElementById('blog-post-form').reset();
+            }
+        }
+
+        // Handle blog post submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogForm = document.getElementById('blog-post-form');
+            if (blogForm) {
+                blogForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const title = document.getElementById('post-title').value.trim();
+                    const content = document.getElementById('post-content').value.trim();
+                    const category = document.getElementById('post-category').value;
+                    const tagsInput = document.getElementById('post-tags').value.trim();
+                    
+                    if (!title || !content) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    const tags = tagsInput ? tagsInput.split(',').map(tag => tag.trim()) : [];
+                    
+                    const newPost = {
+                        id: Date.now(), // Simple ID generation
+                        title: title,
+                        content: content,
+                        category: category,
+                        tags: tags,
+                        author: "Nguyen Xuan Tinh",
+                        authorAvatar: "assets/images/photo.png",
+                        date: new Date(),
+                        likes: 0,
+                        comments: [],
+                        liked: false
+                    };
+                    
+                    blogPosts.unshift(newPost); // Add to beginning
+                    renderBlogPosts();
+                    toggleCreatePost(); // Hide form
+                    
+                    // Show success message
+                    showNotification('Blog post published successfully!', 'success');
+                });
+            }
+        });
+
+        // Render blog posts
+        function renderBlogPosts(posts = null) {
+            const container = document.getElementById('blog-posts-container');
+            if (!container) return;
+            
+            const postsToRender = posts || blogPosts.slice(0, (currentPage + 1) * postsPerPage);
+            
+            if (posts) {
+                container.innerHTML = ''; // Clear if filtering
+            }
+            
+            if (postsToRender.length === 0) {
+                container.innerHTML = '<div class="text-center py-5"><h5>No posts found</h5><p class="text-muted">Try adjusting your search or filter criteria.</p></div>';
+                return;
+            }
+            
+            const postsHTML = postsToRender.map(post => createBlogPostHTML(post)).join('');
+            
+            if (posts) {
+                container.innerHTML = postsHTML;
+            } else {
+                container.innerHTML = postsHTML;
+            }
+            
+            // Show/hide load more button
+            const loadMoreBtn = document.getElementById('load-more-posts');
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = blogPosts.length > (currentPage + 1) * postsPerPage ? 'block' : 'none';
+            }
+        }
+
+        // Create HTML for a single blog post
+        function createBlogPostHTML(post) {
+            const excerpt = post.content.length > 300 ? post.content.substring(0, 300) + '...' : post.content;
+            const formattedDate = post.date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            return `
+                <article class="blog-post blog-post-enter" data-category="${post.category}" data-id="${post.id}">
+                    <div class="blog-post-header">
+                        <div class="blog-post-author">
+                            <img src="${post.authorAvatar}" alt="${post.author}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; display: none;">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div class="blog-author-info">
+                                <h6>${post.author}</h6>
+                                <div class="blog-post-date">${formattedDate}</div>
+                            </div>
+                        </div>
+                        <span class="blog-post-category ${post.category}">${post.category.replace('-', ' ')}</span>
+                    </div>
+                    
+                    <div class="blog-post-content">
+                        <h3 class="blog-post-title">${post.title}</h3>
+                        <div class="blog-post-excerpt">${excerpt.replace(/\n/g, '<br>')}</div>
+                        
+                        ${post.tags.length > 0 ? `
+                        <div class="blog-post-tags">
+                            ${post.tags.map(tag => `<span class="blog-tag">#${tag}</span>`).join('')}
+                        </div>
+                        ` : ''}
+                        
+                        ${post.content.length > 300 ? `<a href="javascript:void(0)" onclick="expandPost(${post.id})" class="blog-read-more">Read more</a>` : ''}
+                    </div>
+                    
+                    <div class="blog-post-actions">
+                        <div class="blog-actions-left">
+                            <button class="blog-action-btn ${post.liked ? 'liked' : ''}" onclick="toggleLike(${post.id})">
+                                <i class="fas fa-heart"></i>
+                                <span>${post.likes}</span>
+                            </button>
+                            <button class="blog-action-btn" onclick="openComments(${post.id})">
+                                <i class="fas fa-comment"></i>
+                                <span>${post.comments.length}</span>
+                            </button>
+                            <button class="blog-action-btn" onclick="sharePost(${post.id})">
+                                <i class="fas fa-share"></i>
+                                Share
+                            </button>
+                        </div>
+                        <div class="blog-stats">
+                            <span>${post.likes} likes</span>
+                            <span>${post.comments.length} comments</span>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        // Toggle like on blog post
+        function toggleLike(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (!post) return;
+            
+            if (post.liked) {
+                post.likes--;
+                post.liked = false;
+            } else {
+                post.likes++;
+                post.liked = true;
+                
+                // Add animation
+                const likeBtn = event.target.closest('.blog-action-btn');
+                likeBtn.classList.add('like-animation');
+                setTimeout(() => likeBtn.classList.remove('like-animation'), 300);
+            }
+            
+            renderBlogPosts();
+        }
+
+        // Expand blog post
+        function expandPost(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (!post) return;
+            
+            const postElement = document.querySelector(`[data-id="${postId}"] .blog-post-excerpt`);
+            if (postElement) {
+                postElement.innerHTML = post.content.replace(/\n/g, '<br>');
+                // Remove read more link
+                const readMoreLink = document.querySelector(`[data-id="${postId}"] .blog-read-more`);
+                if (readMoreLink) {
+                    readMoreLink.remove();
+                }
+            }
+        }
+
+        // Open comments modal
+        function openComments(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (!post) return;
+            
+            currentPostId = postId;
+            
+            // Set post content in modal
+            const modalContent = document.getElementById('modal-post-content');
+            modalContent.innerHTML = `
+                <div class="blog-post-header">
+                    <div class="blog-post-author">
+                        <img src="${post.authorAvatar}" alt="${post.author}" width="40" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; display: none;">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div class="blog-author-info">
+                            <h6>${post.author}</h6>
+                            <small class="text-muted">${post.date.toLocaleDateString()}</small>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="mt-2">${post.title}</h5>
+                <p>${post.content.replace(/\n/g, '<br>')}</p>
+            `;
+            
+            renderComments(post.comments);
+            
+            // Show modal
+            const modal = new bootstrap.Modal(document.getElementById('commentModal'));
+            modal.show();
+        }
+
+        // Render comments
+        function renderComments(comments) {
+            const container = document.getElementById('comments-list');
+            if (!container) return;
+            
+            if (comments.length === 0) {
+                container.innerHTML = '<div class="text-center py-3 text-muted">No comments yet. Be the first to comment!</div>';
+                return;
+            }
+            
+            container.innerHTML = comments.map(comment => `
+                <div class="comment-item">
+                    <img src="${comment.avatar || 'assets/images/default-avatar.png'}" alt="${comment.author}" class="comment-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center comment-avatar" style="width: 36px; height: 36px; display: none;">
+                        <i class="fas fa-user text-white" style="font-size: 0.8rem;"></i>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">${comment.author}</span>
+                            <span class="comment-date">${comment.date.toLocaleDateString()}</span>
+                        </div>
+                        <div class="comment-text">${comment.text}</div>
+                        <div class="comment-actions">
+                            <a href="javascript:void(0)" class="comment-action ${comment.liked ? 'liked' : ''}" onclick="toggleCommentLike(${comment.id})">
+                                <i class="fas fa-heart"></i> ${comment.likes}
+                            </a>
+                            <a href="javascript:void(0)" class="comment-action">Reply</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Handle comment submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('comment-form');
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const commentText = document.getElementById('comment-text').value.trim();
+                    if (!commentText || !currentPostId) return;
+                    
+                    const post = blogPosts.find(p => p.id === currentPostId);
+                    if (!post) return;
+                    
+                    const newComment = {
+                        id: Date.now(),
+                        author: "Nguyen Xuan Tinh", // In a real app, this would be the logged-in user
+                        avatar: "assets/images/photo.png",
+                        text: commentText,
+                        date: new Date(),
+                        likes: 0,
+                        liked: false
+                    };
+                    
+                    post.comments.push(newComment);
+                    renderComments(post.comments);
+                    renderBlogPosts(); // Update post comment count
+                    
+                    // Clear form
+                    document.getElementById('comment-text').value = '';
+                });
+            }
+        });
+
+        // Toggle comment like
+        function toggleCommentLike(commentId) {
+            if (!currentPostId) return;
+            
+            const post = blogPosts.find(p => p.id === currentPostId);
+            if (!post) return;
+            
+            const comment = post.comments.find(c => c.id === commentId);
+            if (!comment) return;
+            
+            if (comment.liked) {
+                comment.likes--;
+                comment.liked = false;
+            } else {
+                comment.likes++;
+                comment.liked = true;
+            }
+            
+            renderComments(post.comments);
+        }
+
+        // Filter posts by category
+        function filterPosts(category) {
+            // Update active button
+            document.querySelectorAll('.blog-filters .btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Filter posts
+            const filteredPosts = category === 'all' ? blogPosts : blogPosts.filter(post => post.category === category);
+            renderBlogPosts(filteredPosts);
+        }
+
+        // Search posts
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-posts');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const query = this.value.toLowerCase().trim();
+                    
+                    if (!query) {
+                        renderBlogPosts();
+                        return;
+                    }
+                    
+                    const filteredPosts = blogPosts.filter(post => 
+                        post.title.toLowerCase().includes(query) ||
+                        post.content.toLowerCase().includes(query) ||
+                        post.tags.some(tag => tag.toLowerCase().includes(query))
+                    );
+                    
+                    renderBlogPosts(filteredPosts);
+                });
+            }
+        });
+
+        // Load more posts
+        function loadMorePosts() {
+            currentPage++;
+            renderBlogPosts();
+        }
+
+        // Share post
+        function sharePost(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (!post) return;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: post.title,
+                    text: post.content.substring(0, 150) + '...',
+                    url: window.location.href + '#blog'
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                // Fallback to clipboard
+                const shareText = `${post.title}\n\n${post.content.substring(0, 150)}...\n\n${window.location.href}#blog`;
+                
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(shareText).then(() => {
+                        showNotification('Post link copied to clipboard!', 'success');
+                    });
+                } else {
+                    // Further fallback
+                    const textArea = document.createElement('textarea');
+                    textArea.value = shareText;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showNotification('Post link copied to clipboard!', 'success');
+                }
+            }
+        }
+
+        // Initialize blog when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeBlog();
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
